@@ -2,8 +2,6 @@
 cluey
 ==========
 
-.. image:: https://raw.githubusercontent.com/rbturnbull/cluey/master/docs/images/cluey-banner.svg
-
 .. start-badges
 
 |pypi badge| |testing badge| |coverage badge| |docs badge| |black badge| |git3moji badge| |cluey badge|
@@ -54,6 +52,97 @@ To install the latest version from the repository, you can use this command:
 .. code-block:: bash
 
     pip install git+https://github.com/rbturnbull/cluey.git
+
+
+Your first Cluey CLI
+=======================
+
+Here is a minimal example of a Cluey CLI app:
+
+.. code-block:: Python
+
+    import cluey
+
+    class GreetCLI(cluey.Cluey):
+        """A minimal Cluey CLI app"""
+
+        @cluey.main
+        def greet(self, name: str = cluey.Option(..., help="")):
+            """Greet a person by name"""
+            print(f"Hello, {name}!")
+
+
+    if __name__ == "__main__":
+        GreetCLI().main()
+
+
+Then you can run this:
+
+.. code-block:: bash
+
+    python greet.py --help
+
+Which will display:
+
+.. code-block:: bash
+
+    Usage: greet.py [OPTIONS]                                                               
+                                                                                            
+    Greet a person by name                                                                  
+                                                                                            
+    ╭─ Options ─────────────────────────────────────────────────────────────────────────────╮
+    │ *  --name        TEXT  The name of the person to greet [required]                     │
+    │    --help              Show this message and exit.                                    │
+    ╰───────────────────────────────────────────────────────────────────────────────────────╯
+
+To run the app,
+
+.. code-block:: bash
+
+    python cluey/examples/greet.py --name Alice
+
+This will display:
+
+.. code-block:: bash
+
+    Hello, Alice!
+
+Adding a flag
+=================
+
+.. code-block:: python
+
+    import cluey
+
+    class GreetCLI(cluey.Cluey):
+        """A minimal Cluey CLI app"""
+
+        @cluey.main
+        def greet(self, name: str = cluey.Option(..., help="The name of the person to greet")):
+            """Greet a person by name"""
+            print(f"Hello, {name}!")
+
+        @cluey.flag(shortcut="-v")
+        def version(self) -> str:
+            """Show the version of this CLI"""
+            return "GreetCLI version 0.1.0"
+
+
+    if __name__ == "__main__":
+        GreetCLI().main()    
+
+
+To display the version of the app, run:
+
+.. code-block :: bash
+
+    python greet.py --version
+    # OR
+    python greet.py -v
+
+
+Adding a second command
+=======================
 
 
 
