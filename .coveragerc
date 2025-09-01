@@ -1,0 +1,6 @@
+[run]
+source = cluey
+
+[report]
+precision = 2
+

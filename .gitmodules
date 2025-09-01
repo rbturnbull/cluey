@@ -1,0 +1,3 @@
+[submodule "cluey/cookiecutter"]
+	path = cluey/cookiecutter
+	url = https://github.com/rbturnbull/cluey-cookiecutter
