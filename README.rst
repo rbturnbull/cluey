@@ -36,6 +36,7 @@ Build clever, class-based command line apps with minimal boilerplate
 
 Documentation at https://rbturnbull.github.io/cluey/
 
+
 .. start-quickstart
 
 Installation

@@ -6,8 +6,6 @@
 cluey
 ===================================
 
-.. image:: https://raw.githubusercontent.com/rbturnbull/cluey/master/docs/images/cluey-banner.svg
-
 .. include:: ../README.rst
    :start-after: start-badges
    :end-before: end-badges
