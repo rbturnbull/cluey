@@ -3,4 +3,5 @@ source = cluey
 
 [report]
 precision = 2
-
+exclude_lines =
+    if __name__ == .__main__.:
