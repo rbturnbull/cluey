@@ -9,9 +9,9 @@ class ProductionMLApp(MLApp):
     def predict(self, **kwargs):
         """Predict using model in batches."""
         batches = self.get_batches(**kwargs)
-        print(f"Evaluating {len(batches)} batches:")
+        print(f"Predicting over {len(batches)} batches:")
         for batch in batches:
-            print(f"Evaluating on batch: {batch}")
+            print(f"Predicting on batch: {batch}")
 
     @cluey.tool("super")
     def train(self, **kwargs):
