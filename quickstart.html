@@ -1,0 +1,611 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quickstart &mdash; cluey 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="prev" title="cluey" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            cluey
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#your-first-cluey-cli">Your first Cluey CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-flag">Adding a flag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-second-command">Adding a second command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-options-with-defaults">Add options with defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#call-one-method-from-another">Call one method from another</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods-that-are-not-commands">Methods that are not commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inheritance">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calling-super">Calling Super</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-executable-script-using-poetry">Adding executable script using Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-separate-tools-cli">A separate tools CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cluey</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quickstart</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/quickstart.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"></a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>The software can be installed using <code class="docutils literal notranslate"><span class="pre">pip</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>cluey
+</pre></div>
+</div>
+<p>To install the latest version from the repository, you can use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/rbturnbull/cluey.git
+</pre></div>
+</div>
+</section>
+<section id="your-first-cluey-cli">
+<h2>Your first Cluey CLI<a class="headerlink" href="#your-first-cluey-cli" title="Link to this heading"></a></h2>
+<p>Here is a minimal example of a Cluey CLI app:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cluey</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">GreetApp</span><span class="p">(</span><span class="n">cluey</span><span class="o">.</span><span class="n">Cluey</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A minimal Cluey CLI app&quot;&quot;&quot;</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Greet a person by name&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">GreetApp</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then you can run this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>cluey/examples/greet.py<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>Which will display:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>╭─<span class="w"> </span>Arguments<span class="w"> </span>─────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>*<span class="w">    </span>name<span class="w">      </span>TEXT<span class="w">  </span>The<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>person<span class="w"> </span>to<span class="w"> </span>greet<span class="w"> </span><span class="o">[</span>required<span class="o">]</span><span class="w">             </span>│
+╰─────────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Options<span class="w"> </span>───────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--version<span class="w">  </span>-v<span class="w">        </span>Show<span class="w"> </span>the<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>this<span class="w"> </span>CLI<span class="w">                           </span>│
+│<span class="w"> </span>--help<span class="w">               </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                            </span>│
+╰─────────────────────────────────────────────────────────────────────────────╯
+</pre></div>
+</div>
+<p>To run the app,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>cluey/examples/cluey/examples/greet.py<span class="w"> </span>Alice
+</pre></div>
+</div>
+<p>This will display:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Hello,<span class="w"> </span>Alice!
+</pre></div>
+</div>
+</section>
+<section id="adding-a-flag">
+<h2>Adding a flag<a class="headerlink" href="#adding-a-flag" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cluey</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">GreetApp</span><span class="p">(</span><span class="n">cluey</span><span class="o">.</span><span class="n">Cluey</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A minimal Cluey CLI app&quot;&quot;&quot;</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The name of the person to greet&quot;</span><span class="p">)):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Greet a person by name&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">flag</span><span class="p">(</span><span class="n">shortcut</span><span class="o">=</span><span class="s2">&quot;-v&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Show the version of this CLI&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;GreetApp version 0.1.0&quot;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">GreetApp</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To display the version of the app, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>cluey/examples/greet.py<span class="w"> </span>--version
+<span class="c1"># OR</span>
+python<span class="w"> </span>cluey/examples/greet.py<span class="w"> </span>-v
+</pre></div>
+</div>
+</section>
+<section id="adding-a-second-command">
+<h2>Adding a second command<a class="headerlink" href="#adding-a-second-command" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cluey</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ArithmeticApp</span><span class="p">(</span><span class="n">cluey</span><span class="o">.</span><span class="n">Cluey</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Does basic arithmetic &quot;&quot;&quot;</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">a</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;A value to start with.&quot;</span><span class="p">),</span>
+        <span class="n">b</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;A value to add.&quot;</span><span class="p">),</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Sums two values &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">subtract</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">a</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;A value to start with.&quot;</span><span class="p">),</span>
+        <span class="n">b</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;A value to sub.&quot;</span><span class="p">),</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Subtracts one value from another &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ArithmeticApp</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then you can run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>cluey/examples/arithmetic.py<span class="w"> </span>--help
+python<span class="w"> </span>cluey/examples/arithmetic.py<span class="w"> </span>add<span class="w"> </span>--help
+python<span class="w"> </span>cluey/examples/arithmetic.py<span class="w"> </span>subtract<span class="w"> </span>--help
+python<span class="w"> </span>cluey/examples/arithmetic.py<span class="w"> </span>add<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">2</span>
+python<span class="w"> </span>cluey/examples/arithmetic.py<span class="w"> </span>subtract<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+</section>
+<section id="add-options-with-defaults">
+<h2>Add options with defaults<a class="headerlink" href="#add-options-with-defaults" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unicodedata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cluey</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">StringTools</span><span class="p">(</span><span class="n">cluey</span><span class="o">.</span><span class="n">Cluey</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Does simple string functions &quot;&quot;&quot;</span>
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lowercase</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The string to process.&quot;</span><span class="p">),</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converts the string to lowercase.&quot;&quot;&quot;</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">string</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clean</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The string to process.&quot;</span><span class="p">),</span>
+        <span class="n">strip_accents</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Whether or not to strip accents.&quot;</span><span class="p">),</span>
+        <span class="n">ascii</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Whether or not to include only ascii characters.&quot;</span><span class="p">),</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Cleans the given string.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">strip_accents</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">character</span> <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFKD&#39;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">combining</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">ascii</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">character</span> <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">string</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isascii</span><span class="p">())</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">string</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">StringTools</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now the optional arguments can be set via the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>cluey/examples/stringtools.py<span class="w"> </span>clean<span class="w"> </span><span class="s2">&quot;Café ☕️&quot;</span><span class="w"> </span>--strip-accents<span class="w"> </span>--ascii
+
+Cafe
+</pre></div>
+</div>
+</section>
+<section id="call-one-method-from-another">
+<h2>Call one method from another<a class="headerlink" href="#call-one-method-from-another" title="Link to this heading"></a></h2>
+<p>So far, all of the above could have been done more easily with Typer, but with Cluey,
+you are able to call one method from another and the function arguments get passed to the command line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unicodedata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cluey</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">StringTools</span><span class="p">(</span><span class="n">cluey</span><span class="o">.</span><span class="n">Cluey</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Does simple string functions &quot;&quot;&quot;</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clean</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The string to process.&quot;</span><span class="p">),</span>
+        <span class="n">strip_accents</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Whether or not to strip accents.&quot;</span><span class="p">),</span>
+        <span class="n">ascii</span><span class="p">:</span><span class="nb">bool</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Whether or not to include only ascii characters.&quot;</span><span class="p">),</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Cleans the given string.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">strip_accents</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">character</span> <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFKD&#39;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">combining</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">ascii</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">character</span> <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">string</span> <span class="k">if</span> <span class="n">character</span><span class="o">.</span><span class="n">isascii</span><span class="p">())</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">string</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="s1">&#39;clean&#39;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">count_vowels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Counts the number of vowels in the string.&quot;&quot;&quot;</span>
+
+        <span class="n">string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">string</span> <span class="k">if</span> <span class="n">character</span> <span class="ow">in</span> <span class="s1">&#39;aeiou&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vowels:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">StringTools</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now I can see that all the options for the <code class="docutils literal notranslate"><span class="pre">clean</span></code> command are available with <code class="docutils literal notranslate"><span class="pre">count_vowels</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>cluey/examples/stringtools.py<span class="w"> </span>count-vowels<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>stringtools.py<span class="w"> </span>count-vowels<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>STRING
+
+Counts<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>vowels<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>string.
+
+╭─<span class="w"> </span>Arguments<span class="w"> </span>─────────────────────────────────────────────────────╮
+│<span class="w"> </span>*<span class="w">    </span>string<span class="w">      </span>TEXT<span class="w">  </span>The<span class="w"> </span>string<span class="w"> </span>to<span class="w"> </span>process.<span class="w"> </span><span class="o">[</span>required<span class="o">]</span><span class="w">        </span>│
+╰─────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Options<span class="w"> </span>───────────────────────────────────────────────────────╮
+│<span class="w"> </span>--strip-accents<span class="w">    </span>--no-strip-accents<span class="w">      </span>Whether<span class="w"> </span>or<span class="w"> </span>not<span class="w"> </span>to<span class="w">    </span>│
+│<span class="w">                                            </span>strip<span class="w"> </span>accents.<span class="w">       </span>│
+│<span class="w">                                            </span><span class="o">[</span>default:<span class="w">            </span>│
+│<span class="w">                                            </span>no-strip-accents<span class="o">]</span><span class="w">    </span>│
+│<span class="w"> </span>--ascii<span class="w">            </span>--no-ascii<span class="w">              </span>Whether<span class="w"> </span>or<span class="w"> </span>not<span class="w"> </span>to<span class="w">    </span>│
+│<span class="w">                                            </span>include<span class="w"> </span>only<span class="w"> </span>ascii<span class="w">   </span>│
+│<span class="w">                                            </span>characters.<span class="w">          </span>│
+│<span class="w">                                            </span><span class="o">[</span>default:<span class="w"> </span>no-ascii<span class="o">]</span><span class="w">  </span>│
+│<span class="w"> </span>--help<span class="w">                                     </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w">    </span>│
+│<span class="w">                                            </span>and<span class="w"> </span>exit.<span class="w">            </span>│
+╰─────────────────────────────────────────────────────────────────╯
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>cluey/examples/stringtools.py<span class="w"> </span>count-vowels<span class="w"> </span><span class="s2">&quot;Café ☕️&quot;</span><span class="w"> </span>--strip-accents
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Cafe
+Vowels:<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+</section>
+<section id="methods-that-are-not-commands">
+<h2>Methods that are not commands<a class="headerlink" href="#methods-that-are-not-commands" title="Link to this heading"></a></h2>
+<p>Not all methods need to be exposed as commands to the command-line interface.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cluey</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MLApp</span><span class="p">(</span><span class="n">cluey</span><span class="o">.</span><span class="n">Cluey</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A simple machine learning style CLI&quot;&quot;&quot;</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">method</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_batches</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">items</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;List of items to process&quot;</span><span class="p">),</span>
+        <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">cluey</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span>
+            <span class="mi">2</span><span class="p">,</span>
+            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Batch size for training and evaluation&quot;</span>
+        <span class="p">),</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split items into batches (not a command).&quot;&quot;&quot;</span>
+        <span class="n">batches</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">batch_size</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="n">batches</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="s2">&quot;get_batches&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Train a model in batches.&quot;&quot;&quot;</span>
+        <span class="n">batches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_batches</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training on </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">batches</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">batches</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training on batch: </span><span class="si">{</span><span class="n">batch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="s2">&quot;get_batches&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate a model in batches.&quot;&quot;&quot;</span>
+        <span class="n">batches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_batches</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Evaluating </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">batches</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">batches</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Evaluating on batch: </span><span class="si">{</span><span class="n">batch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">MLApp</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now all the arguments and options for <code class="docutils literal notranslate"><span class="pre">get_batches</span></code> are available with <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> but <code class="docutils literal notranslate"><span class="pre">get_batches</span></code> isn’t a command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>cluey/examples/ml.py<span class="w"> </span>--help
+
+Usage:<span class="w"> </span>ml.py<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+
+╭─<span class="w"> </span>Options<span class="w"> </span>───────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--help<span class="w">          </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                         </span>│
+╰─────────────────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Commands<span class="w"> </span>──────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>evaluate<span class="w">   </span>Evaluate<span class="w"> </span>a<span class="w"> </span>model<span class="w"> </span><span class="k">in</span><span class="w"> </span>batches.<span class="w">                                             </span>│
+│<span class="w"> </span>train<span class="w">      </span>Train<span class="w"> </span>a<span class="w"> </span>model<span class="w"> </span><span class="k">in</span><span class="w"> </span>batches.<span class="w">                                                </span>│
+╰─────────────────────────────────────────────────────────────────────────────────────╯
+
+$<span class="w"> </span>python<span class="w"> </span>cluey/examples/ml.py<span class="w"> </span>train<span class="w"> </span>A<span class="w"> </span>B<span class="w"> </span>C<span class="w"> </span>D<span class="w"> </span>E
+Training<span class="w"> </span>on<span class="w"> </span><span class="m">3</span><span class="w"> </span>batches
+Training<span class="w"> </span>on<span class="w"> </span>batch:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;A&#39;</span>,<span class="w"> </span><span class="s1">&#39;B&#39;</span><span class="o">]</span>
+Training<span class="w"> </span>on<span class="w"> </span>batch:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;C&#39;</span>,<span class="w"> </span><span class="s1">&#39;D&#39;</span><span class="o">]</span>
+Training<span class="w"> </span>on<span class="w"> </span>batch:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;E&#39;</span><span class="o">]</span>
+
+$<span class="w"> </span>python<span class="w"> </span>cluey/examples/ml.py<span class="w"> </span>evaluate<span class="w"> </span>F<span class="w"> </span>G<span class="w"> </span>H<span class="w"> </span>I<span class="w"> </span>J<span class="w"> </span>K<span class="w"> </span>L<span class="w"> </span>M<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">3</span>
+Evaluating<span class="w"> </span><span class="m">3</span><span class="w"> </span>batches:
+Evaluating<span class="w"> </span>on<span class="w"> </span>batch:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;F&#39;</span>,<span class="w"> </span><span class="s1">&#39;G&#39;</span>,<span class="w"> </span><span class="s1">&#39;H&#39;</span><span class="o">]</span>
+Evaluating<span class="w"> </span>on<span class="w"> </span>batch:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;I&#39;</span>,<span class="w"> </span><span class="s1">&#39;J&#39;</span>,<span class="w"> </span><span class="s1">&#39;K&#39;</span><span class="o">]</span>
+Evaluating<span class="w"> </span>on<span class="w"> </span>batch:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;L&#39;</span>,<span class="w"> </span><span class="s1">&#39;M&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="inheritance">
+<h2>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading"></a></h2>
+<p>Cluey allows you to have base classes and inherit from them to build more complex CLIs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cluey</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cluey.examples.ml</span><span class="w"> </span><span class="kn">import</span> <span class="n">MLApp</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ExtendedMLApp</span><span class="p">(</span><span class="n">MLApp</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extends MLApp with an extra command&quot;&quot;&quot;</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="s2">&quot;get_batches&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Show batch statistics.&quot;&quot;&quot;</span>
+        <span class="n">batches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_batches</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">batches</span><span class="p">]</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">batches</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches; sizes=</span><span class="si">{</span><span class="n">sizes</span><span class="si">}</span><span class="s2">; total_items=</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ExtendedMLApp</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This app contains all the commands of the base MLApp but it adds the extra <code class="docutils literal notranslate"><span class="pre">stats</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>cluey/examples/extendedml.py<span class="w"> </span>--help
+
+Usage:<span class="w"> </span>extendedml.py<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+
+╭─<span class="w"> </span>Options<span class="w"> </span>────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--help<span class="w">          </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                              </span>│
+╰──────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Commands<span class="w"> </span>───────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>evaluate<span class="w">   </span>Evaluate<span class="w"> </span>a<span class="w"> </span>model<span class="w"> </span><span class="k">in</span><span class="w"> </span>batches.<span class="w">                                  </span>│
+│<span class="w"> </span>stats<span class="w">      </span>Show<span class="w"> </span>batch<span class="w"> </span>statistics.<span class="w">                                        </span>│
+│<span class="w"> </span>train<span class="w">      </span>Train<span class="w"> </span>a<span class="w"> </span>model<span class="w"> </span><span class="k">in</span><span class="w"> </span>batches.<span class="w">                                     </span>│
+╰──────────────────────────────────────────────────────────────────────────╯
+
+$<span class="w"> </span>python<span class="w"> </span>cluey/examples/extendedml.py<span class="w"> </span>stats<span class="w"> </span>A<span class="w"> </span>B<span class="w"> </span>C<span class="w"> </span>D<span class="w"> </span>E<span class="w"> </span>F<span class="w"> </span>G<span class="w"> </span>H<span class="w"> </span>I<span class="w"> </span>J<span class="w"> </span>K<span class="w"> </span>L<span class="w"> </span>M
+
+<span class="m">7</span><span class="w"> </span>batches<span class="p">;</span><span class="w"> </span><span class="nv">sizes</span><span class="o">=[</span><span class="m">2</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">1</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="nv">total_items</span><span class="o">=</span><span class="m">13</span>
+</pre></div>
+</div>
+</section>
+<section id="calling-super">
+<h2>Calling Super<a class="headerlink" href="#calling-super" title="Link to this heading"></a></h2>
+<p>You can also override methods from the parent class and extend the arguments and options, without redefining the arguments from the <code class="docutils literal notranslate"><span class="pre">super</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cluey</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cluey.examples.ml</span><span class="w"> </span><span class="kn">import</span> <span class="n">MLApp</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ExtendedMLApp</span><span class="p">(</span><span class="n">MLApp</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extends MLApp with an extra command&quot;&quot;&quot;</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="s1">&#39;super&#39;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_batches</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">lowercase</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="n">cluey</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Whether or not to lowercase items.&quot;</span><span class="p">),</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split items into batches and optionally lowercase them.&quot;&quot;&quot;</span>
+        <span class="n">batches</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_batches</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">lowercase</span><span class="p">:</span>
+            <span class="n">batches</span> <span class="o">=</span> <span class="p">[[</span><span class="n">item</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">]</span> <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">batches</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">batches</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="s2">&quot;get_batches&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Show batch statistics.&quot;&quot;&quot;</span>
+        <span class="n">batches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_batches</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">batches</span><span class="p">]</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">batches</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches; sizes=</span><span class="si">{</span><span class="n">sizes</span><span class="si">}</span><span class="s2">; total_items=</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ExtendedMLApp</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-executable-script-using-poetry">
+<h2>Adding executable script using Poetry<a class="headerlink" href="#adding-executable-script-using-poetry" title="Link to this heading"></a></h2>
+<p>If you use Poetry as your package manager, you can add an executable script to your project by modifying the <cite>pyproject.toml</cite> file:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry.scripts]</span>
+<span class="n">cluey-example-extendedml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cluey.examples.extendedml:ExtendedMLApp.main&quot;</span>
+</pre></div>
+</div>
+<p>This will create a command-line script named <cite>cluey-example-extendedml</cite> that runs the <cite>ExtendedMLApp</cite> application.</p>
+</section>
+<section id="a-separate-tools-cli">
+<h2>A separate tools CLI<a class="headerlink" href="#a-separate-tools-cli" title="Link to this heading"></a></h2>
+<p>Sometimes you want your main app to be a single command CLI, but you also want to provide a separate CLI executable with several helper subcommands.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cluey</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cluey.examples.ml</span><span class="w"> </span><span class="kn">import</span> <span class="n">MLApp</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProductionMLApp</span><span class="p">(</span><span class="n">MLApp</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extends MLApp with an extra command&quot;&quot;&quot;</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="s2">&quot;get_batches&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Predict using model in batches.&quot;&quot;&quot;</span>
+        <span class="n">batches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_batches</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Evaluating </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">batches</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">batches</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Evaluating on batch: </span><span class="si">{</span><span class="n">batch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">tool</span><span class="p">(</span><span class="s2">&quot;super&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Train the model.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">tool</span><span class="p">(</span><span class="s2">&quot;super&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate the model.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@cluey</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Cite this model.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please cite the paper: Turnbull, Robert, &#39;Cluey: A Command Line Utility for Engineers and You&#39;, Fantastic Journal (2025), 1–25.&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ProductionMLApp</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This overrides the <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> commands to turn them into tools instead of being on the main CLI. Then it adds a new tool.
+You can create executables for both the main app and the tools app using Poetry:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry.scripts]</span>
+<span class="n">cluey-example-productionml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cluey.examples.productionml:ProductionMLApp.main&quot;</span>
+<span class="n">cluey-example-productionml-tools</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cluey.examples.productionml:ProductionMLApp.tools&quot;</span>
+</pre></div>
+</div>
+<p>This allows the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cluey-example-productionml<span class="w"> </span>predict<span class="w"> </span>--help
+Usage:<span class="w"> </span>cluey-example-productionml<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>ITEMS...
+
+Predict<span class="w"> </span>using<span class="w"> </span>model<span class="w"> </span><span class="k">in</span><span class="w"> </span>batches.
+
+╭─<span class="w"> </span>Arguments<span class="w"> </span>──────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>*<span class="w">    </span>items<span class="w">      </span>ITEMS...<span class="w">  </span>List<span class="w"> </span>of<span class="w"> </span>items<span class="w"> </span>to<span class="w"> </span>process<span class="w"> </span><span class="o">[</span>required<span class="o">]</span><span class="w">                        </span>│
+╰──────────────────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Options<span class="w"> </span>────────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--batch-size<span class="w">        </span>INTEGER<span class="w">  </span>Batch<span class="w"> </span>size<span class="w"> </span><span class="k">for</span><span class="w"> </span>training<span class="w"> </span>and<span class="w"> </span>evaluation<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span><span class="m">2</span><span class="o">]</span><span class="w">     </span>│
+│<span class="w"> </span>--help<span class="w">                       </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                             </span>│
+╰──────────────────────────────────────────────────────────────────────────────────────╯
+
+$<span class="w"> </span>cluey-example-productionml-tools<span class="w"> </span>--help
+Usage:<span class="w"> </span>cluey-example-productionml-tools<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+
+╭─<span class="w"> </span>Options<span class="w"> </span>────────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--help<span class="w">          </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                          </span>│
+╰──────────────────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Commands<span class="w"> </span>───────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>cite<span class="w">       </span>Cite<span class="w"> </span>this<span class="w"> </span>model.<span class="w">                                                          </span>│
+│<span class="w"> </span>evaluate<span class="w">   </span>Evaluate<span class="w"> </span>the<span class="w"> </span>model.<span class="w">                                                       </span>│
+│<span class="w"> </span>predict<span class="w">    </span>Predict<span class="w"> </span>using<span class="w"> </span>model<span class="w"> </span><span class="k">in</span><span class="w"> </span>batches.<span class="w">                                           </span>│
+│<span class="w"> </span>train<span class="w">      </span>Train<span class="w"> </span>the<span class="w"> </span>model.<span class="w">                                                          </span>│
+╰──────────────────────────────────────────────────────────────────────────────────────╯
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="cluey" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Robert Turnbull.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

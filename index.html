@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cluey &mdash; cluey 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quickstart" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            cluey
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">cluey</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">cluey</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cluey">
+<h1>cluey<a class="headerlink" href="#cluey" title="Link to this heading"></a></h1>
+<img alt="https://raw.githubusercontent.com/rbturnbull/cluey/master/docs/images/cluey-banner.svg" src="https://raw.githubusercontent.com/rbturnbull/cluey/master/docs/images/cluey-banner.svg" />
+<p><a class="reference external" href="https://pypi.org/project/cluey/"><img alt="PyPI - Version" src="https://img.shields.io/pypi/v/cluey?color=blue" /></a> <a class="reference external" href="https://github.com/rbturnbull/cluey/actions"><img alt="testing badge" src="https://github.com/rbturnbull/cluey/actions/workflows/testing.yml/badge.svg" /></a> <a class="reference external" href="https://rbturnbull.github.io/cluey/coverage/"><img alt="coverage badge" src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/rbturnbull/b84e24e6b58498cfcdd7f19388e111ad/raw/coverage-badge.json" /></a> <a class="reference external" href="https://rbturnbull.github.io/cluey"><img alt="docs badge" src="https://github.com/rbturnbull/cluey/actions/workflows/docs.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/psf/black"><img alt="black badge" src="https://img.shields.io/badge/code%20style-black-000000.svg" /></a> <a class="reference external" href="https://robinpokorny.github.io/git3moji/"><img alt="git3moji badge" src="https://img.shields.io/badge/git3moji-%E2%9A%A1%EF%B8%8F%F0%9F%90%9B%F0%9F%93%BA%F0%9F%91%AE%F0%9F%94%A4-fffad8.svg" /></a> <a class="reference external" href="https://rbturnbull.github.io/cluey/"><img alt="cluey badge" src="https://img.shields.io/badge/cluey-B1230A.svg" /></a></p>
+<p><strong>A Tool for Packaging PyTorch Models as Reusable Applications</strong></p>
+<p>Deploying machine learning models remains a challenge, particularly in scientific contexts where models are often shared only as standalone scripts or Jupyter notebooks—frequently without parameters and in forms that hinder reuse. cluey streamlines this process by enabling users to generate fully structured Python packages from PyTorch models, complete with documentation, testing, and interfaces for training, validation, and prediction. Users subclass the cluey base class and override methods to define the model and data loaders; the arguments to these methods are automatically exposed via a command-line interface. cluey also supports hyperparameter tuning by allowing argument distributions to be specified, and integrates with experiment tracking tools such as Weights &amp; Biases. Optionally, a graphical user interface can be auto-generated using function signatures and type hints. cluey applications are easily testable using a built-in testing framework and are readily publishable to PyPI or Conda, making it simple to share deep learning tools with a broader audience.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#your-first-cluey-cli">Your first Cluey CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#adding-a-flag">Adding a flag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#adding-a-second-command">Adding a second command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#add-options-with-defaults">Add options with defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#call-one-method-from-another">Call one method from another</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#methods-that-are-not-commands">Methods that are not commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#inheritance">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#calling-super">Calling Super</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#adding-executable-script-using-poetry">Adding executable script using Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#a-separate-tools-cli">A separate tools CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#git-commits">Git Commits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-of-conduct">Code of Conduct</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Robert Turnbull.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
