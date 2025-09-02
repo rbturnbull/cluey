@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = "cluey"
-copyright = "2022, Robert Turnbull"
+copyright = "2025, Robert Turnbull"
 author = "Robert Turnbull"
 
 # The full version, including alpha/beta/rc tags
