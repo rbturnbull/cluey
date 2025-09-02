@@ -1,5 +1,7 @@
+import re
 from cluey.testing import CliRunner
 from cluey.examples.productionml import ProductionMLApp
+
 
 runner = CliRunner()
 app = ProductionMLApp()
@@ -35,7 +37,7 @@ def test_tools_cli_lists_train_evaluate_cite():
     for cmd in ("train", "evaluate", "cite"):
         assert cmd in out
     assert "Commands" in out
-    assert "cite       Cite this model." in out
+    assert re.search(r"cite\s+Cite this model\.", out)
     assert "evaluate   Evaluate the model." in out
     assert "predict    Predict using model in batches" in out
     assert "train      Train the model." in out
