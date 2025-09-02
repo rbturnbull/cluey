@@ -57,3 +57,7 @@ testpaths = [
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.poetry.scripts]
+cluey-example-extendedml = "cluey.examples.extendedml:ExtendedMLApp.main"
+cluey-example-productionml = "cluey.examples.productionml:ProductionMLApp.main"
+cluey-example-productionml-tools = "cluey.examples.productionml:ProductionMLApp.tools"
