@@ -53,6 +53,7 @@ To install the latest version from the repository, you can use this command:
 
     pip install git+https://github.com/rbturnbull/cluey.git
 
+Documentation is available here: https://rbturnbull.github.io/cluey/
 
 Your first Cluey CLI
 =======================
