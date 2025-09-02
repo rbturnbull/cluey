@@ -108,6 +108,15 @@ This will display:
 
     Hello, Alice!
 
+You can also run the command programatically:
+
+.. code-block:: python
+
+    >>> app = GreetApp()
+    >>> app.greet("Alice")
+    Hello, Alice!
+
+
 Adding a flag
 =================
 
