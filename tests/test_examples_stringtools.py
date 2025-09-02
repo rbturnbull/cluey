@@ -8,7 +8,7 @@ cli = app.main_app  # Typer app behind .main()
 
 
 def test_lowercase_basic():
-    result = runner.invoke(cli, ["lowercase", "Hello"])
+    result = runner.invoke(cli, "lowercase Hello")
     assert result.exit_code == 0
     # Should print the lowercase version and return it
     assert "hello" in result.stdout
@@ -16,7 +16,7 @@ def test_lowercase_basic():
 
 def test_clean_defaults_no_changes():
     # Accents and non-ascii removal are False by default
-    result = runner.invoke(cli, ["clean", "Café"])
+    result = runner.invoke(cli, "clean Café")
     assert result.exit_code == 0
     assert "Café" in result.stdout
 
@@ -25,7 +25,7 @@ def test_clean_strip_accents_and_ascii():
     # Strip accents and remove non-ascii; emoji should disappear, é -> e
     result = runner.invoke(
         cli,
-        ["clean", "Café ☕️", "--strip-accents", "--ascii"],
+        "clean Café☕️ --strip-accents --ascii",
     )
     assert result.exit_code == 0
     out = result.stdout
@@ -36,7 +36,7 @@ def test_clean_strip_accents_and_ascii():
 
 def test_count_vowels_inherits_options_and_works():
     # count-vowels should expose --strip-accents/--ascii via 'clean'
-    result_help = runner.invoke(cli, ["count-vowels", "--help"])
+    result_help = runner.invoke(cli, "count-vowels --help")
     assert result_help.exit_code == 0
     help_text = result_help.stdout
     assert "--strip-accents" in help_text

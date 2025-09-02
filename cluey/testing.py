@@ -20,6 +20,9 @@ class CliRunner(ClickCliRunner):
         default_env = {"NO_COLOR": "1", "TERM": "dumb", "COLUMNS": "120"}
         merged_env = {**default_env, **(env or {})}
 
+        if isinstance(args, str):
+            args = args.split()
+
         use_cli = app.getcommand()
         result: Result = super().invoke(
             use_cli,

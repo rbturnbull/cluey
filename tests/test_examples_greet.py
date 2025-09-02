@@ -6,19 +6,25 @@ cli = GreetApp().main_app
 
 
 def test_greet_default():
-    result = runner.invoke(cli, ["Alice"])
+    result = runner.invoke(cli, "Alice")
     assert result.exit_code == 0
     assert "Hello, Alice!" in result.stdout
 
 
 def test_greet_help():
-    result = runner.invoke(cli, ["greet", "--help"])
+    result = runner.invoke(cli, "greet --help")
     assert result.exit_code == 0
     assert "name" in result.stdout
     assert "Show the version of this CLI" in result.stdout
 
 
 def test_version_flag():
-    result = runner.invoke(cli, ["--version"])
+    result = runner.invoke(cli, "--version")
+    assert result.exit_code == 0
+    assert "GreetApp version" in result.stdout
+
+
+def test_version_flag_shortcut():
+    result = runner.invoke(cli, "-v")
     assert result.exit_code == 0
     assert "GreetApp version" in result.stdout

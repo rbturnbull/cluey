@@ -10,7 +10,7 @@ tools_cli = app.tools_app
 
 
 def test_main_cli_only_predict_visible():
-    r = runner.invoke(main_cli, ["--help"])
+    r = runner.invoke(main_cli, "--help")
     assert r.exit_code == 0
     out = r.stdout
     assert "List of items to process" in out
@@ -22,7 +22,7 @@ def test_main_cli_only_predict_visible():
 
 
 def test_predict_runs_with_items_and_batch_size():
-    r = runner.invoke(main_cli, ["A", "B", "C", "D", "--batch-size", "3"])
+    r = runner.invoke(main_cli, "A B C D --batch-size 3")
     assert r.exit_code == 0
     out = r.stdout
     assert "Predicting over 2 batches:" in out
@@ -31,7 +31,7 @@ def test_predict_runs_with_items_and_batch_size():
 
 
 def test_tools_cli_lists_train_evaluate_cite():
-    r = runner.invoke(tools_cli, ["--help"])
+    r = runner.invoke(tools_cli, "--help")
     assert r.exit_code == 0
     out = r.stdout
     for cmd in ("train", "evaluate", "cite"):
@@ -44,16 +44,16 @@ def test_tools_cli_lists_train_evaluate_cite():
 
 
 def test_tools_train_and_evaluate_delegate_and_accept_options():
-    r1 = runner.invoke(tools_cli, ["train", "a", "b", "c", "--batch-size", "2"])
+    r1 = runner.invoke(tools_cli, "train a b c --batch-size 2")
     assert r1.exit_code == 0
     assert "Training on 2 batches" in r1.stdout
 
-    r2 = runner.invoke(tools_cli, ["evaluate", "w", "x", "y", "z"])
+    r2 = runner.invoke(tools_cli, "evaluate w x y z")
     assert r2.exit_code == 0
     assert "Evaluating 2 batches:" in r2.stdout
 
 
 def test_tools_cite_prints_citation():
-    r = runner.invoke(tools_cli, ["cite"])
+    r = runner.invoke(tools_cli, "cite")
     assert r.exit_code == 0
     assert "Please cite the paper" in r.stdout

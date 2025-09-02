@@ -7,7 +7,7 @@ cli = ExtendedMLApp().main_app
 
 
 def test_help_lists_commands_and_hides_helper():
-    result = runner.invoke(cli, ["--help"])
+    result = runner.invoke(cli, "--help")
     assert result.exit_code == 0
     out = result.stdout
     # Inherited commands + new one
@@ -21,7 +21,7 @@ def test_help_lists_commands_and_hides_helper():
 def test_train_uses_overridden_get_batches_with_lowercase():
     # With --lowercase, items should appear lowercased in train output
     result = runner.invoke(
-        cli, ["train", "A", "B", "C", "--batch-size", "2", "--lowercase"]
+        cli, "train A B C --batch-size 2 --lowercase"
     )
     assert result.exit_code == 0
     out = result.stdout
@@ -37,7 +37,7 @@ def test_train_uses_overridden_get_batches_with_lowercase():
 def test_evaluate_respects_parent_defaults_and_overrides():
     # Default batch_size=2, items lowercase applied
     result = runner.invoke(
-        cli, ["evaluate", "X", "y", "Z", "--lowercase"]
+        cli, "evaluate X y Z --lowercase"
     )
     assert result.exit_code == 0
     out = result.stdout
@@ -51,7 +51,7 @@ def test_evaluate_respects_parent_defaults_and_overrides():
 
 def test_stats_outputs_sizes_and_total_and_has_merged_options_in_help():
     # Help should include merged options/args from get_batches, including --lowercase and --batch-size
-    help_result = runner.invoke(cli, ["stats", "--help"])
+    help_result = runner.invoke(cli, "stats --help")
     assert help_result.exit_code == 0
     ht = help_result.stdout
     assert "--batch-size" in ht
@@ -61,7 +61,7 @@ def test_stats_outputs_sizes_and_total_and_has_merged_options_in_help():
 
     # Now run stats with explicit items and batch size
     run_result = runner.invoke(
-        cli, ["stats", "a", "b", "c", "d", "e", "--batch-size", "2"]
+        cli, "stats a b c d e --batch-size 2",
     )
     assert run_result.exit_code == 0
     out = run_result.stdout
