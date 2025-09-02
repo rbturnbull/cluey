@@ -4,6 +4,12 @@ on:
   push:
     branches: main
       
+permissions:
+  contents: write   # needed to push to gh-pages
+  pages: write      # harmless here; useful if you later use actions/upload-pages-artifact
+  id-token: write   # ditto (OpenID for Pages)
+
+  
 jobs:
   build:
     runs-on: ubuntu-latest
