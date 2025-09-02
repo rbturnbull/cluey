@@ -526,12 +526,12 @@ Sometimes you want your main app to be a single command CLI, but you also want t
         @cluey.tool("super")
         def train(self, **kwargs):
             """Train the model."""
-            return self.super(**kwargs)
+            return super().train(**kwargs)
 
         @cluey.tool("super")
         def evaluate(self, **kwargs):
             """Evaluate the model."""
-            return self.super(**kwargs)
+            return super().evaluate(**kwargs)
 
         @cluey.tool()
         def cite(self, **kwargs):
