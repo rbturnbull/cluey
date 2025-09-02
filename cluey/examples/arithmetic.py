@@ -1,13 +1,26 @@
 import cluey
 
-class GreetCLI(cluey.Cluey):
-    """A minimal Cluey CLI app"""
+class ArithmeticApp(cluey.Cluey):
+    """ Does basic arithmetic """
 
     @cluey.main
-    def greet(self, name: str = cluey.Option(..., help="The name of the person to greet")):
-        """Greet a person by name"""
-        print(f"Hello, {name}!")
+    def add(
+        self, 
+        a: float = cluey.Argument(..., help="A value to start with."),
+        b: float = cluey.Argument(..., help="A value to add."),
+    ):
+        """ Sums two values """
+        print(a+b)
+
+    @cluey.main
+    def subtract(
+        self, 
+        a: float = cluey.Argument(..., help="A value to start with."),
+        b: float = cluey.Argument(..., help="A value to sub."),
+    ):
+        """ Subtracts one value from another """
+        print(a-b)
 
 
 if __name__ == "__main__":
-    GreetCLI().main()
+    ArithmeticApp().main()

@@ -1,18 +1,18 @@
 import cluey
 
-class GreetCLI(cluey.Cluey):
-    """A minimal Cluey CLI app"""
+class GreetApp(cluey.Cluey):
+    """ A friendly app to greet you. """
 
     @cluey.main
-    def greet(self, name: str = cluey.Option(..., help="The name of the person to greet")):
+    def greet(self, name: str = cluey.Argument(..., help="The name of the person to greet")):
         """Greet a person by name"""
         print(f"Hello, {name}!")
 
     @cluey.flag(shortcut="-v")
     def version(self) -> str:
         """Show the version of this CLI"""
-        return "GreetCLI version 0.1.0"
+        return "GreetApp version 0.1.0"
 
 
 if __name__ == "__main__":
-    GreetCLI().main()
+    GreetApp().main()
