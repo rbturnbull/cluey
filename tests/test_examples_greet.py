@@ -1,4 +1,4 @@
-from typer.testing import CliRunner
+from cluey.testing import CliRunner
 from cluey.examples.greet import GreetApp
 
 runner = CliRunner()
