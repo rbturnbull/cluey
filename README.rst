@@ -599,6 +599,6 @@ Credits
 
 .. start-credits
 
-Cluey was created created by `Robert Turnbull <https://robturnbull.com>`_ with contributions from Wytamma Wirth and Ashkan Pakzad.
+Cluey was created created by `Robert Turnbull <https://robturnbull.com>`_ with contributions from `Wytamma Wirth <https://findanexpert.unimelb.edu.au/profile/888836-wytamma-wirth>`_ and `Ashkan Pakzad <https://findanexpert.unimelb.edu.au/profile/1083318-ashkan-pakzad>`_.
 
 .. end-credits
